@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Show me a cool bug!</title>
+        <meta name="description" content="Show me a cool bug!">
+        <meta charset="utf-8">
+        <meta name="robots" content="index,follow">
+        <link rel="icon" href="/1494258023-bugladybugspringinsectautumn_84344.ico">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <div>
+        <center>
+            <h1>Show me a cool bug!</h1>
+            <button type="button"
+            onclick="displayRandomImages();">Show me a cool bug!</button>  
+        </center>
+        </div>
+     </body>
+
+     <body>
+       <head>
+         <style>.hide { display: none; }</style>
+         <div id="ladybug" class="hide bugs">Ladybug</div>
+         <div id="grasshopper" class="hide bugs">Grasshopper</div>
+         <div id="snail" class="hide bugs">Snail</div>
+         <div id="beetle" class="hide bugs">Beetle</div>
+      </head>
+    </body>
+  
+    <script>  
+        function displayRandomImages()
+        
+        {  
+        var imageArray = [  
+
+        {
+        src: "https://images.pexels.com/photos/144243/ladybugs-ladybirds-bugs-insects-144243.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        width: "470",
+        height: "335"
+        },
+        
+        {
+        src: "https://images.pexels.com/photos/71108/nature-insect-butterfly-macro-71108.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        width: "433",
+        height: "325"
+        },
+
+        {
+        src: "https://images.pexels.com/photos/2777701/pexels-photo-2777701.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        width: "216",
+        height: "325"
+        },
+
+        {
+        src: "https://images.pexels.com/photos/4934809/pexels-photo-4934809.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        width: "470",
+        height: "313"
+        } ];
+
+    var arrayLength = imageArray.length;  
+    var newArray = [];  
+    for (var i = 0; i < arrayLength; i++) {  
+        newArray[i] = new Image();  
+        newArray[i].src = imageArray[i].src;  
+        newArray[i].width = imageArray[i].width;  
+        newArray[i].height = imageArray[i].height; 
+    }
+
+    function getRandomNum(min, max)   
+  {     
+      imgNo = Math.floor(Math.random() * (max - min + 1)) + min;  
+      return newArray[imgNo];  
+  }
+
+  var newImage = getRandomNum(0, newArray.length - 1);  
+
+  var images = document.getElementsByTagName('img');  
+  var l = images.length;  
+  for (var p = 0; p < l; p++) {  
+     images[0].parentNode.removeChild(images[0]);  
+  }  
+
+  document.body.appendChild(newImage);  
+}
+    </script>
+</html>
